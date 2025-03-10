@@ -115,12 +115,12 @@
 			<plugin>
 				<groupId>community.flock.wirespec.plugin.maven</groupId>
 				<artifactId>wirespec-maven-plugin</artifactId>
-				<version>0.11.2</version>
+				<version>0.12.0</version>
 				<dependencies>
 					<dependency>
 						<groupId>community.flock.wirespec.integration</groupId>
 						<artifactId>spring-jvm</artifactId>
-						<version>0.11.2</version>
+						<version>0.12.0</version>
 					</dependency>
 				</dependencies>
 				<executions>
