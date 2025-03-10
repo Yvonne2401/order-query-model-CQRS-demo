@@ -3,5 +3,4 @@ updates:
   - package-ecosystem: "maven"
     directory: "/" # Location of package manifests
     schedule:
-      interval: "daily"
-      time: "9:00"
+      interval: "daily" 
