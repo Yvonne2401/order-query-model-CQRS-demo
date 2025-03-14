@@ -1,24 +1,24 @@
 package com.example.demo.cqrs.entity
 
 import com.example.demo.cqrs.events.OrderCreated
+import community.flock.wirespec.generated.kotlin.OrderDTO
 import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
 import java.math.BigDecimal
+import java.util.UUID
 
 @Entity
 data class OrderEntity(
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    val orderId: Long,
+    val orderId: UUID,
     val totalAmount: BigDecimal,
     val amountPaid: BigDecimal,
 ) {
-    constructor(totalAmount: BigDecimal, amountPaid: BigDecimal) : this(0L, totalAmount, amountPaid)
-    constructor() : this(0L, BigDecimal.ZERO, BigDecimal.ZERO)
+    constructor() : this(UUID.randomUUID(), BigDecimal.ZERO, BigDecimal.ZERO)
+
+    fun toOrderDTO() = OrderDTO(orderId.toString(), totalAmount.toDouble(), amountPaid.toDouble())
 
     companion object {
-        fun fromOrderCreatedEvent(event: OrderCreated) = OrderEntity(event.totalAmount, event.amountPaid)
+        fun fromOrderCreatedEvent(event: OrderCreated) = OrderEntity(event.orderId, event.totalAmount, event.amountPaid)
     }
 }

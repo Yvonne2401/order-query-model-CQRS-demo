@@ -1,9 +1,13 @@
 type OrderDTO{
-  orderId: Number,
+  orderId: String,
   totalAmount: Number,
   amountPaid: Number
 }
 
-endpoint OrderDTO GET /orders -> {
+endpoint OrdersDTO GET /orders -> {
     200 -> OrderDTO[]
+}
+
+endpoint OrderDTO GET /orders/{orderId : String} -> {
+    200 -> OrderDTO
 }
