@@ -16,9 +16,9 @@
 
 	<properties>
 		<java.version>23</java.version>
+		<wirespec.spring.integration.version>0.17.3</wirespec.spring.integration.version>
 		<kotlin.version>2.2.21</kotlin.version>
 		<axon.version>4.12.1</axon.version>
-		<wirespec.spring.integration.version>0.12.4</wirespec.spring.integration.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -126,15 +126,12 @@
 					<execution>
 						<id>spring</id>
 						<goals>
-							<goal>custom</goal>
+							<goal>compile</goal>
 						</goals>
 						<configuration>
 							<input>${project.basedir}/src/main/wirespec</input>
 							<output>${project.build.directory}/generated-sources</output>
 							<emitterClass>community.flock.wirespec.integration.spring.kotlin.emit.SpringKotlinEmitter</emitterClass>
-							<shared>Kotlin</shared>
-							<extension>kt</extension>
-							<packageName>community.flock.wirespec.generated.kotlin</packageName>
 						</configuration>
 					</execution>
 				</executions>

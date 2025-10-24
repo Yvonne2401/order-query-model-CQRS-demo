@@ -1,7 +1,7 @@
 package com.example.demo.cqrs.entity
 
 import com.example.demo.cqrs.events.OrderCreated
-import community.flock.wirespec.generated.kotlin.OrderDTO
+import community.flock.wirespec.generated.model.OrderDTO
 import jakarta.persistence.Entity
 import jakarta.persistence.Id
 import java.math.BigDecimal
