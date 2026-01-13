@@ -18,7 +18,7 @@
 		<java.version>23</java.version>
 		<wirespec.spring.integration.version>0.17.8</wirespec.spring.integration.version>
 		<kotlin.version>2.2.21</kotlin.version>
-		<axon.version>4.12.1</axon.version>
+		<axon.version>4.12.3</axon.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
